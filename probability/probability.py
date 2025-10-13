@@ -501,3 +501,161 @@
 #* Example and uses:
 # Often used in sports to anticipate how a player's  or team's performance can affect the probability of winning a game.
 # Often used in machine learning classification problems.   
+
+
+
+
+
+
+
+
+#--------------------Bayesian Notation----------------------
+
+# A set is a collection of elements, which hold certain values. Additionally,
+# every event has a set of  outcomes, that satisy it.
+
+# The null-set(or empty set), denoted by ∅, is an set which contains no values.
+
+#  x ∈ A 
+# Where x is an  element and A is a set
+
+# Notation              Interpretation            Example
+# x ∈ A            x is an element of A       3 ∈ {1,2,3}
+# x ∉ A           x is not an element of A    4 ∉ {1,2,3}
+# A ⊆ B          A is a subset of B          {1,2} ⊆ {1,2,3}
+# A ⊂ B          A is a proper subset of B   {1,2} ⊂ {1,2,3}
+# A = B          A is equal to B             {1,2,3} = {3,2,1}
+# A ≠ B         A is not equal to B         {1,2} ≠ {1,2,3}
+# A ∪ B        A union B                   {1,2} ∪ {2,3} = {1,2,3}
+# A ∩ B        A intersection B            {1,2} ∩ {2
+#   ∀x           For all/ any x such that      ∀x: x ∈  all even numbers
+
+
+# Remember ! Every set has at least 2 subsets,
+# A ⊆ A and ∅ ⊆ A
+
+#  The sets of outcomes that satisfy  two events A and B can interact in one of the following 3 ways.
+# Examples:
+# A--> Diamonds
+# B--> Hearts
+
+
+# Not touch at all.
+# Intersect(Partially Overlap)
+# One completely overlaps the other (Subset)
+# A ∩ B = ∅
+# A ∩ B ≠ ∅
+# A ⊆ B or B ⊆ A
+
+
+
+
+# Intersection 
+# The intersection of two or more events  expresses the set of outcomes that satisfy all the events 
+# simultaneously.
+# Notation: A ∩ B
+
+
+# Union 
+# The union of two or more events expresses the set of outcomes that satisfy at least one of the events.
+# Notation: A ∪ B
+# A ∪ B =  A + B - (A ∩ B)
+
+
+
+# Mutually Exclusive Events 
+# Sets with no overlapping elements are called mutually exclusive.
+# Notation: A ∩ B = ∅
+# if A ∩ B = ∅, then the events A and B are mutually exclusive.
+
+
+# Independent and Dependent Events 
+# If the likelihood of event A  occuring p(A) is affected event B occuring, then we say that A and B are dependent events.
+# Alternatively, if it isn't - the two events are independent.
+# Notation: p(A|B) = p(A)  Independent events
+# p(A|B) ≠ p(A)  Dependent events
+# Where p(A|B) is the conditional probability of A given B.
+
+# p(A|B) = p(A ∩ B) / p(B)
+# p(A|B) ≠ p(B|A)
+
+
+
+
+
+# Conditional Probability
+# For any two events A and B, such  the likelihood of B occuring is greater than 0
+# p(B)>0, the conditional probability formula states the followig
+# p(A|B) = p(AnB)/ p(B)
+
+
+
+
+
+
+
+
+
+# Additive Law
+# The additive law calculates the probability  of the  union based on the probability  of the 
+# individual sets it  accounts for.
+# p(AuB) = p(A) + p(B) - (A n B)
+
+# Intuition behind the formula
+
+# • Recall the formula for finding the size of the Union using the size of the Intersection:
+# • 𝐴 ∪ 𝐵 = 𝐴 + 𝐵 − 𝐴 ∩ 𝐵
+# • The probability of each one is simply its size over the size of the sample space.
+# • This holds true for any events A and B.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  The Multiplication Rule 
+
+#  The Multiplication rule calculates the probability of the intersection based on the conditional probability.
+# p(A n B) = p (A|B). p (B)
+
+# Intuition behind the formula
+
+# • We can multiply both sides of the conditional probability formula 𝑃 𝐴|𝐵 = 𝑃 𝐴∩𝐵
+# 𝑃 𝐵 by 𝑃 𝐵 to get
+# 𝑃 𝐴 ∩ 𝐵 = 𝑃 𝐴 𝐵 × 𝑃 𝐵 .
+# • If event B occurs in 40% of the time (𝑃 𝐵 = 0.4) and event A occurs in 50% of the time B occurs
+# (𝑃 𝐴|𝐵 = 0.5), then they would simultaneously occur in 20% of the time (P A 𝐵 × 𝑃 𝐵 = 0.5 × 0.4 =
+# 0.2).
+
+
+
+
+
+
+
+
+# Bayes' Law 
+
+# Bayes' Law helps us understand the relationship between two events by computing the different conditional probabilities.
+# We also call it Bayes' Rule or Bayes' Theorem.
+# P(A|B) =                p(B|A) * p(A)
+#                      ----------------------
+#                              p(B)
+
+
+# Intuition behind the formula
+
+# • According to the multiplication rule 𝑃 𝐴 ∩ 𝐵 = 𝑃 𝐴 𝐵 × 𝑃 𝐵 , so 𝑃 𝐵 ∩ 𝐴 = 𝑃 𝐵 𝐴 × 𝑃 𝐴 .
+# • Since 𝑃 𝐴 ∩ 𝐵 = 𝑃(𝐵 ∩ 𝐴), we plug in 𝑃 𝐵 𝐴 × 𝑃 𝐴 for 𝑃 𝐴 ∩ 𝐵 in the conditional probability formula 𝑃 𝐴 𝐵 = 𝑃 𝐴∩𝐵
+# 𝑃(𝐵)
+# • Bayes’ Law is often used in medical or business analysis to determine which of two symptoms affects the other one more.
